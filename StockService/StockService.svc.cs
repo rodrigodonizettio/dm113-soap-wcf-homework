@@ -7,9 +7,17 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
+using StockEntityModel;
+using System.ServiceModel.Activation;
+
 namespace StockService
-{    
-    public class Service1 : IStockService, IStockServiceV2
+{
+    // WCF service that implements the service contract
+    // This implementation performs minimal error checking and exception handling
+    [AspNetCompatibilityRequirements(
+        RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    //public class StockService : IStockService, IStockServiceV2
+    public class StockService : IStockService
     {
         public bool CreateProductStock(ProductStockData productStockData)
         {
@@ -21,9 +29,27 @@ namespace StockService
             throw new NotImplementedException();
         }
 
-        public List<string> RetrieveAllProducts()
+        public List<string> RetrieveAllProductsStock()
         {
-            throw new NotImplementedException();
+            List<string> productsStockDataName = new List<string>();
+            try
+            {
+                using(StockProvider database = new StockProvider())
+                {
+                    List<StockEntityModel.ProductStock> productsStock = (from productStock in database.ProductsStock
+                        select productStock).ToList();
+
+                    foreach(StockEntityModel.ProductStock productStock in productsStock)
+                    {
+                        productsStockDataName.Add(productStock.Name);
+                    }
+                }
+            }
+            catch
+            {
+                //TODO: Should be implemented in future
+            }
+            return productsStockDataName;
         }
 
         public ProductStockData RetrieveProductStock(string productNumber)

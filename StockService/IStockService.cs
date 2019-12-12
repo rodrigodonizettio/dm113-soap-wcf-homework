@@ -12,7 +12,7 @@ namespace ProductStock
     public interface IStockService
     {
         [OperationContract]
-        List<string> RetrieveAllProducts();
+        List<string> RetrieveAllProductsStock();
         [OperationContract]
         bool CreateProductStock(ProductStockData productStockData);
         [OperationContract]

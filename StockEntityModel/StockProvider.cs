@@ -28,7 +28,7 @@ namespace StockEntityModel
     {
         [Required(ErrorMessage = "The ID field is required")]
         public int Id { get; set; }
-        [Required(ErrorMessage = "The NUMBER field is required")]
+        [Required(ErrorMessage = "The NUMBER field is required")] //TODO: Number should be unique, shouldn't it?
         public string Number { get; set; }
         [Required(ErrorMessage = "The NAME field is required")]
         public string Name { get; set; }

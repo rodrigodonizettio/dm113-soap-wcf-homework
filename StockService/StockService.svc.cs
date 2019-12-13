@@ -54,7 +54,27 @@ namespace StockService
 
         public ProductStockData RetrieveProductStock(string productNumber)
         {
-            throw new NotImplementedException();
+            ProductStockData productStockData = null;
+            try
+            {
+                using (StockProvider database = new StockProvider())
+                {
+                    StockEntityModel.ProductStock productStock = database.ProductsStock.First(
+                        p => String.Compare(p.Number, productNumber) == 0);
+                    productStockData = new ProductStockData()
+                    {
+                        Number = productStock.Number,
+                        Name = productStock.Name,
+                        Description = productStock.Description,
+                        Amount = productStock.Amount
+                    };
+                }
+            }
+            catch
+            {
+                //TODO: Should be implemented in future
+            }
+            return productStockData;
         }
 
         public int RetrieveProductStockAmount(string productNumber)

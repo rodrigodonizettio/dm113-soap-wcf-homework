@@ -26,14 +26,14 @@ namespace StockService
                 using(StockProvider database = new StockProvider())
                 {
                     database.ProductsStock.Add(productStock);
-                    database.SaveChanges();
-                    return true;
+                    database.SaveChanges();                    
                 }
             }
             catch
             {
                 return false;
             }
+            return true;
         }
 
         public bool DeleteProductStock(string productNumber)
@@ -50,8 +50,7 @@ namespace StockService
                     else
                     {
                         database.ProductsStock.Remove(ParseProductStockDataToProductStock(productStockData));
-                        database.SaveChanges();
-                        return true;
+                        database.SaveChanges();                        
                     }
                 }
             }
@@ -59,6 +58,7 @@ namespace StockService
             {
                 return false;
             }
+            return true;
         }
 
         public List<string> RetrieveAllProductsStock()

@@ -19,9 +19,21 @@ namespace StockService
     //public class StockService : IStockService, IStockServiceV2
     public class StockService : IStockService
     {
-        public bool CreateProductStock(ProductStockData productStockData)
+        public bool CreateProductStock(StockEntityModel.ProductStock productStock)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using(StockProvider database = new StockProvider())
+                {
+                    database.ProductsStock.Add(productStock);
+                    database.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool DeleteProductStock(string productNumber)

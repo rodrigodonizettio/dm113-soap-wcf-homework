@@ -110,7 +110,29 @@ namespace StockService
 
         public bool UpdateProductStockAmount(string productNumber, int productAmount)
         {
-            throw new NotImplementedException();
+            try
+            {
+                StockEntityModel.ProductStock productStock = ParseProductStockDataToProductStock(RetrieveProductStock(productNumber));
+                if(productStock == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    productStock.Amount += productAmount;
+                }
+                            
+                using (StockProvider database = new StockProvider())
+                {
+                    database.Entry(productStock).State = System.Data.Entity.EntityState.Modified;
+                    database.SaveChanges();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
         }
 
         private StockEntityModel.ProductStock ParseProductStockDataToProductStock(ProductStockData productStockData)

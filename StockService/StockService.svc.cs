@@ -105,7 +105,19 @@ namespace StockService
 
         public int RetrieveProductStockAmount(string productNumber)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ProductStockData productStockData = RetrieveProductStock(productNumber);
+                if (productStockData != null)
+                {
+                    return productStockData.Amount;
+                }
+            }
+            catch
+            {
+                //TODO: Should be implemented in future
+            }
+            return 0;                
         }
 
         public bool UpdateProductStockAmount(string productNumber, int productAmount)

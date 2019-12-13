@@ -38,7 +38,27 @@ namespace StockService
 
         public bool DeleteProductStock(string productNumber)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using(StockProvider database = new StockProvider())
+                {
+                    ProductStockData productStockData = RetrieveProductStock(productNumber);
+                    if(productStockData == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        database.ProductsStock.Remove(ParseProductStockDataToProductStock(productStockData));
+                        database.SaveChanges();
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public List<string> RetrieveAllProductsStock()

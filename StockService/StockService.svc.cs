@@ -73,13 +73,7 @@ namespace StockService
                 {
                     StockEntityModel.ProductStock productStock = database.ProductsStock.First(
                         p => String.Compare(p.Number, productNumber) == 0);
-                    productStockData = new ProductStockData()
-                    {
-                        Number = productStock.Number,
-                        Name = productStock.Name,
-                        Description = productStock.Description,
-                        Amount = productStock.Amount
-                    };
+                    productStockData = ParseProductStockToProductStockData(productStock);
                 }
             }
             catch

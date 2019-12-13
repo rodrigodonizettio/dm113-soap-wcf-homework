@@ -14,7 +14,7 @@ namespace ProductStock
         [OperationContract]
         List<string> RetrieveAllProductsStock();
         [OperationContract]
-        bool CreateProductStock(ProductStockData productStockData);
+        bool CreateProductStock(StockEntityModel.ProductStock productStock);
         [OperationContract]
         bool DeleteProductStock(string productNumber);
         [OperationContract]

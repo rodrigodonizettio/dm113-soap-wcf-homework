@@ -98,5 +98,29 @@ namespace StockService
         {
             throw new NotImplementedException();
         }
+
+        private StockEntityModel.ProductStock ParseProductStockDataToProductStock(ProductStockData productStockData)
+        {            
+            StockEntityModel.ProductStock productStock = new StockEntityModel.ProductStock()
+            {
+                Number = productStockData.Number,
+                Name = productStockData.Name,
+                Description = productStockData.Description,
+                Amount = productStockData.Amount
+            };
+            return productStock;
+        }
+
+        private ProductStockData ParseProductStockToProductStockData(StockEntityModel.ProductStock productStock)
+        {
+            ProductStockData productStockData = new ProductStockData()
+            {
+                Number = productStock.Number,
+                Name = productStock.Name,
+                Description = productStock.Description,
+                Amount = productStock.Amount
+            };
+            return productStockData;
+        }
     }
 }

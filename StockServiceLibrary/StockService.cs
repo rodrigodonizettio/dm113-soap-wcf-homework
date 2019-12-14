@@ -15,8 +15,7 @@ namespace StockService
     // This implementation performs minimal error checking and exception handling
     [AspNetCompatibilityRequirements(
         RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    //public class StockService : IStockService, IStockServiceV2
-    public class StockService : IStockService
+    public class StockService : IStockService, IStockServiceV2
     {
         public bool CreateProductStock(StockEntityModel.ProductStock productStock)
         {

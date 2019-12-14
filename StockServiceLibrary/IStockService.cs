@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ProductStock
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://projetoavaliativo.dm113/01", Name = "IStockService")]
     public interface IStockService
     {
         [OperationContract]

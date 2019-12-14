@@ -137,7 +137,8 @@ namespace StockService
                             
                 using (StockProvider database = new StockProvider())
                 {
-                    database.Entry(productStock).State = System.Data.Entity.EntityState.Modified;
+                    var context = ((System.Data.Entity.Infrastructure.IObjectContextAdapter)database).ObjectContext;
+                    context.ExecuteStoreCommand("UPDATE ProductStocks SET Amount= {0} WHERE Number= {1}", productStock.Amount, productNumber);
                     database.SaveChanges();
                 }
             }

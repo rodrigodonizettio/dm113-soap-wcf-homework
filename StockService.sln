@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockService", "StockServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockServiceLibrary", "StockServiceLibrary\StockServiceLibrary.csproj", "{EC64E731-109A-4A71-9A55-3E6F4962BA21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockServiceHost", "StockServiceHost\StockServiceHost.csproj", "{660DFC76-521A-4C7D-BEFD-2196CB1594E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EC64E731-109A-4A71-9A55-3E6F4962BA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC64E731-109A-4A71-9A55-3E6F4962BA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC64E731-109A-4A71-9A55-3E6F4962BA21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660DFC76-521A-4C7D-BEFD-2196CB1594E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660DFC76-521A-4C7D-BEFD-2196CB1594E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660DFC76-521A-4C7D-BEFD-2196CB1594E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660DFC76-521A-4C7D-BEFD-2196CB1594E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -49,7 +49,8 @@ namespace StockService
                     }
                     else
                     {
-                        database.ProductsStock.Remove(ParseProductStockDataToProductStock(productStockData));
+                        var context = ((System.Data.Entity.Infrastructure.IObjectContextAdapter)database).ObjectContext;
+                        context.ExecuteStoreCommand("DELETE FROM ProductStocks WHERE Number= {0}", productNumber);
                         database.SaveChanges();                        
                     }
                 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://projetoavaliativo.dm113/02" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://projetoavaliativo.dm113/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://projetoavaliativo.dm113/02/Imports">
+      <xsd:import schemaLocation="http://localhost:65201/StockService.svc?xsd=xsd5" namespace="http://projetoavaliativo.dm113/02" />
+      <xsd:import schemaLocation="http://localhost:65201/StockService.svc?xsd=xsd0" namespace="http://projetoavaliativo.dm113/01" />
+      <xsd:import schemaLocation="http://localhost:65201/StockService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:65201/StockService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:65201/StockService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/StockEntityModel" />
+      <xsd:import schemaLocation="http://localhost:65201/StockService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ProductStock" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IStockServiceV2_UpdateProductStockAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductStockAmount" />
+  </wsdl:message>
+  <wsdl:message name="IStockServiceV2_UpdateProductStockAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductStockAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStockServiceV2_RetrieveProductStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveProductStock" />
+  </wsdl:message>
+  <wsdl:message name="IStockServiceV2_RetrieveProductStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveProductStockResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IStockServiceV2">
+    <wsdl:operation name="UpdateProductStockAmount">
+      <wsdl:input wsaw:Action="http://projetoavaliativo.dm113/02/IStockServiceV2/UpdateProductStockAmount" message="tns:IStockServiceV2_UpdateProductStockAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://projetoavaliativo.dm113/02/IStockServiceV2/UpdateProductStockAmountResponse" message="tns:IStockServiceV2_UpdateProductStockAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProductStock">
+      <wsdl:input wsaw:Action="http://projetoavaliativo.dm113/02/IStockServiceV2/RetrieveProductStock" message="tns:IStockServiceV2_RetrieveProductStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://projetoavaliativo.dm113/02/IStockServiceV2/RetrieveProductStockResponse" message="tns:IStockServiceV2_RetrieveProductStock_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

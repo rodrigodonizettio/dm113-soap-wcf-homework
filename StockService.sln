@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockServiceLibrary", "Stoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockServiceHost", "StockServiceHost\StockServiceHost.csproj", "{660DFC76-521A-4C7D-BEFD-2196CB1594E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockClient", "StockClient\StockClient.csproj", "{62E7786A-702A-4CC1-8860-7CF54B7574A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockServiceClient", "StockClient\StockServiceClient.csproj", "{62E7786A-702A-4CC1-8860-7CF54B7574A6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{766B9DE9-F4AC-40A3-A2DF-51E70B2A1F0A} = {766B9DE9-F4AC-40A3-A2DF-51E70B2A1F0A}
 	EndProjectSection

@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ServiceModel;
-using StockClient.StockService;
-using StockClient.StockServiceV2;
+using StockServiceClient.StockService;
 
-namespace StockClient
+namespace StockServiceClient
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Press ENTER when the service has started");
+            Console.ReadLine();
+
             StockService.StockServiceClient proxy = OpenProxyConnection();
 
             ShouldCreateProductStock(proxy);            

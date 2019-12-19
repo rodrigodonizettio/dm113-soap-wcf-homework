@@ -14,6 +14,6 @@ namespace ProductStock
         [OperationContract]
         bool UpdateProductStockAmount(string productNumber, int productAmount); //Improvement due to Add and Sub original project requirements
         [OperationContract]
-        ProductStockData RetrieveProductStock(string productNumber);
+        int RetrieveProductStockAmount(string productNumber);
     }
 }

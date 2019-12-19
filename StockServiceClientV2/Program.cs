@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ServiceModel;
-using StockServiceClientV2.StockService;
+using StockClient.StockService;
 
 namespace StockServiceClientV2
 {
@@ -16,7 +16,7 @@ namespace StockServiceClientV2
             Console.WriteLine("Press ENTER when the service has started");
             Console.ReadLine();
 
-            StockService.StockServiceClient proxyV2 = OpenProxyConnectionV2("WS2007HttpBinding_IStockServiceV2");
+            StockClient.StockService.StockServiceV2Client proxyV2 = OpenProxyConnectionV2("WS2007HttpBinding_IStockServiceV2");
 
             ShouldRetrieveProductStockAmount(proxyV2);
             ShouldUpdateProductStockAmount(proxyV2);
@@ -25,7 +25,7 @@ namespace StockServiceClientV2
         }
 
 
-        public static void ShouldUpdateProductStockAmount(StockService.StockServiceClient proxy)
+        public static void ShouldUpdateProductStockAmount(StockClient.StockService.StockServiceV2Client proxy)
         {
             Console.WriteLine("Test - UPDATE a ProductStock AMOUNT");
             string productStockNumber = "number1";
@@ -41,7 +41,7 @@ namespace StockServiceClientV2
             Console.WriteLine();
         }
 
-        public static void ShouldRetrieveProductStockAmount(StockService.StockServiceClient proxy)
+        public static void ShouldRetrieveProductStockAmount(StockClient.StockService.StockServiceV2Client proxy)
         {
             Console.WriteLine("Test - RETRIEVE a ProductStock AMOUNT");
             string productStockNumber = "number1";
@@ -50,13 +50,13 @@ namespace StockServiceClientV2
             Console.WriteLine();
         }
 
-        public static StockService.StockServiceClient OpenProxyConnectionV2(string endpointConfigurationName)
+        public static StockClient.StockService.StockServiceV2Client OpenProxyConnectionV2(string endpointConfigurationName)
         {
             Console.WriteLine("Test - Client-2");
-            return new StockService.StockServiceClient();
+            return new StockClient.StockService.StockServiceV2Client(endpointConfigurationName);
         }
 
-        public static void CloseProxyConnection(StockService.StockServiceClient proxy)
+        public static void CloseProxyConnection(StockClient.StockService.StockServiceV2Client proxy)
         {
             proxy.Close();
             Console.WriteLine("Press ENTER to finish");

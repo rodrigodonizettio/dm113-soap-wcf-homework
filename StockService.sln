@@ -16,6 +16,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockServiceClient", "Stock
 		{766B9DE9-F4AC-40A3-A2DF-51E70B2A1F0A} = {766B9DE9-F4AC-40A3-A2DF-51E70B2A1F0A}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockServiceClientV2", "StockServiceClientV2\StockServiceClientV2.csproj", "{04747043-54E1-4B32-8EA4-F6CD56C17A6D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{766B9DE9-F4AC-40A3-A2DF-51E70B2A1F0A} = {766B9DE9-F4AC-40A3-A2DF-51E70B2A1F0A}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +47,10 @@ Global
 		{62E7786A-702A-4CC1-8860-7CF54B7574A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E7786A-702A-4CC1-8860-7CF54B7574A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E7786A-702A-4CC1-8860-7CF54B7574A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04747043-54E1-4B32-8EA4-F6CD56C17A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04747043-54E1-4B32-8EA4-F6CD56C17A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04747043-54E1-4B32-8EA4-F6CD56C17A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04747043-54E1-4B32-8EA4-F6CD56C17A6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -26,14 +26,6 @@ namespace StockServiceClient
             shouldDeleteProductStock(proxy);
             
             CloseProxyConnection(proxy);
-
-
-            StockService.StockServiceClient proxyV2 = OpenProxyConnectionV2("WS2007HttpBinding_IStockServiceV2");
-
-            ShouldRetrieveProductStockAmount(proxyV2);
-            ShouldUpdateProductStockAmount(proxyV2);
-
-            CloseProxyConnection(proxy);
         }
 
 
@@ -134,12 +126,6 @@ namespace StockServiceClient
         public static StockService.StockServiceClient OpenProxyConnection()
         {
             Console.WriteLine("Test - Client-1");
-            return new StockService.StockServiceClient();
-        }
-
-        public static StockService.StockServiceClient OpenProxyConnectionV2(string endpointConfigurationName)
-        {
-            Console.WriteLine("Test - Client-2");
             return new StockService.StockServiceClient();
         }
 

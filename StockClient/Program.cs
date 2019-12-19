@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.ServiceModel;
-using StockServiceClient.StockService;
+using StockClient.StockService;
 
 namespace StockServiceClient
 {
@@ -16,7 +16,7 @@ namespace StockServiceClient
             Console.WriteLine("Press ENTER when the service has started");
             Console.ReadLine();
 
-            StockService.StockServiceClient proxy = OpenProxyConnection();
+            StockClient.StockService.StockServiceClient proxy = OpenProxyConnection();
 
             ShouldCreateProductStock(proxy);            
             ShouldRetrieveAllProductsStock(proxy);
@@ -29,10 +29,10 @@ namespace StockServiceClient
         }
 
 
-        public static void ShouldCreateProductStock(StockService.StockServiceClient proxy)
+        public static void ShouldCreateProductStock(StockClient.StockService.StockServiceClient proxy)
         {
             Console.WriteLine("Test - CREATE a ProductStock");
-            StockService.ProductStock productStock = new StockService.ProductStock();
+            StockClient.StockService.ProductStock productStock = new StockClient.StockService.ProductStock();
             productStock.Number = "number1";
             productStock.Name = "name1";
             productStock.Description = "description1";
@@ -49,7 +49,7 @@ namespace StockServiceClient
             Console.WriteLine();
         }
 
-        public static void shouldDeleteProductStock(StockService.StockServiceClient proxy)
+        public static void shouldDeleteProductStock(StockClient.StockService.StockServiceClient proxy)
         {
             Console.WriteLine("Test - DELETE a ProductStock");
             string productStockNumber = "number1";
@@ -64,7 +64,7 @@ namespace StockServiceClient
             Console.WriteLine();
         }
 
-        public static void ShouldRetrieveAllProductsStock(StockService.StockServiceClient proxy)
+        public static void ShouldRetrieveAllProductsStock(StockClient.StockService.StockServiceClient proxy)
         {
             Console.WriteLine("Test - RETRIEVE ALL ProductsStock");
             List<string> productStockDataNames = proxy.RetrieveAllProductsStock().ToList();
@@ -76,12 +76,12 @@ namespace StockServiceClient
             Console.WriteLine();
         }
 
-        public static void ShouldRetrieveProductStock(StockService.StockServiceClient proxy)
+        public static void ShouldRetrieveProductStock(StockClient.StockService.StockServiceClient proxy)
         {
             Console.WriteLine("Test - RETRIEVE ProductStock BY NUMBER");
             string productStockNumber = "number1";
 
-            StockService.ProductStockData productStockData = proxy.RetrieveProductStock(productStockNumber);
+            StockClient.StockService.ProductStockData productStockData = proxy.RetrieveProductStock(productStockNumber);
 
             if (productStockData != null)
             {
@@ -98,7 +98,7 @@ namespace StockServiceClient
             Console.WriteLine();
         }
 
-        public static void ShouldUpdateProductStockAmount(StockService.StockServiceClient proxy)
+        public static void ShouldUpdateProductStockAmount(StockClient.StockService.StockServiceClient proxy)
         {
             Console.WriteLine("Test - UPDATE a ProductStock AMOUNT");
             string productStockNumber = "number1";
@@ -114,7 +114,7 @@ namespace StockServiceClient
             Console.WriteLine();
         }
 
-        public static void ShouldRetrieveProductStockAmount(StockService.StockServiceClient proxy)
+        public static void ShouldRetrieveProductStockAmount(StockClient.StockService.StockServiceClient proxy)
         {
             Console.WriteLine("Test - RETRIEVE a ProductStock AMOUNT");
             string productStockNumber = "number1";
@@ -123,13 +123,13 @@ namespace StockServiceClient
             Console.WriteLine();
         }
 
-        public static StockService.StockServiceClient OpenProxyConnection()
+        public static StockClient.StockService.StockServiceClient OpenProxyConnection()
         {
             Console.WriteLine("Test - Client-1");
-            return new StockService.StockServiceClient();
+            return new StockClient.StockService.StockServiceClient();
         }
 
-        public static void CloseProxyConnection(StockService.StockServiceClient proxy)
+        public static void CloseProxyConnection(StockClient.StockService.StockServiceClient proxy)
         {
             proxy.Close();
             Console.WriteLine("Press ENTER to finish");

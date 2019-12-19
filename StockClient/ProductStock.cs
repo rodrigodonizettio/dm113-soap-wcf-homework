@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StockServiceClient.StockService
+namespace StockClient.StockService
 {
     using System.Runtime.Serialization;
     
@@ -191,7 +191,7 @@ namespace StockServiceClient.StockService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://projetoavaliativo.dm113/01", ConfigurationName="StockServiceClient.StockService.IStockService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://projetoavaliativo.dm113/01", ConfigurationName="StockClient.StockService.IStockService")]
     public interface IStockService
     {
         
@@ -202,10 +202,10 @@ namespace StockServiceClient.StockService
         System.Threading.Tasks.Task<string[]> RetrieveAllProductsStockAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://projetoavaliativo.dm113/01/IStockService/CreateProductStock", ReplyAction="http://projetoavaliativo.dm113/01/IStockService/CreateProductStockResponse")]
-        bool CreateProductStock(StockServiceClient.StockService.ProductStock productStock);
+        bool CreateProductStock(StockClient.StockService.ProductStock productStock);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://projetoavaliativo.dm113/01/IStockService/CreateProductStock", ReplyAction="http://projetoavaliativo.dm113/01/IStockService/CreateProductStockResponse")]
-        System.Threading.Tasks.Task<bool> CreateProductStockAsync(StockServiceClient.StockService.ProductStock productStock);
+        System.Threading.Tasks.Task<bool> CreateProductStockAsync(StockClient.StockService.ProductStock productStock);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://projetoavaliativo.dm113/01/IStockService/DeleteProductStock", ReplyAction="http://projetoavaliativo.dm113/01/IStockService/DeleteProductStockResponse")]
         bool DeleteProductStock(string productNumber);
@@ -228,20 +228,20 @@ namespace StockServiceClient.StockService
         System.Threading.Tasks.Task<bool> UpdateProductStockAmountAsync(string productNumber, int productAmount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://projetoavaliativo.dm113/01/IStockService/RetrieveProductStock", ReplyAction="http://projetoavaliativo.dm113/01/IStockService/RetrieveProductStockResponse")]
-        StockServiceClient.StockService.ProductStockData RetrieveProductStock(string productNumber);
+        StockClient.StockService.ProductStockData RetrieveProductStock(string productNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://projetoavaliativo.dm113/01/IStockService/RetrieveProductStock", ReplyAction="http://projetoavaliativo.dm113/01/IStockService/RetrieveProductStockResponse")]
-        System.Threading.Tasks.Task<StockServiceClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber);
+        System.Threading.Tasks.Task<StockClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IStockServiceChannel : StockServiceClient.StockService.IStockService, System.ServiceModel.IClientChannel
+    public interface IStockServiceChannel : StockClient.StockService.IStockService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class StockServiceClient : System.ServiceModel.ClientBase<StockServiceClient.StockService.IStockService>, StockServiceClient.StockService.IStockService
+    public partial class StockServiceClient : System.ServiceModel.ClientBase<StockClient.StockService.IStockService>, StockClient.StockService.IStockService
     {
         
         public StockServiceClient()
@@ -278,12 +278,12 @@ namespace StockServiceClient.StockService
             return base.Channel.RetrieveAllProductsStockAsync();
         }
         
-        public bool CreateProductStock(StockServiceClient.StockService.ProductStock productStock)
+        public bool CreateProductStock(StockClient.StockService.ProductStock productStock)
         {
             return base.Channel.CreateProductStock(productStock);
         }
         
-        public System.Threading.Tasks.Task<bool> CreateProductStockAsync(StockServiceClient.StockService.ProductStock productStock)
+        public System.Threading.Tasks.Task<bool> CreateProductStockAsync(StockClient.StockService.ProductStock productStock)
         {
             return base.Channel.CreateProductStockAsync(productStock);
         }
@@ -318,19 +318,19 @@ namespace StockServiceClient.StockService
             return base.Channel.UpdateProductStockAmountAsync(productNumber, productAmount);
         }
         
-        public StockServiceClient.StockService.ProductStockData RetrieveProductStock(string productNumber)
+        public StockClient.StockService.ProductStockData RetrieveProductStock(string productNumber)
         {
             return base.Channel.RetrieveProductStock(productNumber);
         }
         
-        public System.Threading.Tasks.Task<StockServiceClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber)
+        public System.Threading.Tasks.Task<StockClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber)
         {
             return base.Channel.RetrieveProductStockAsync(productNumber);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://projetoavaliativo.dm113/02", ConfigurationName="StockServiceClient.StockService.IStockServiceV2")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://projetoavaliativo.dm113/02", ConfigurationName="StockClient.StockService.IStockServiceV2")]
     public interface IStockServiceV2
     {
         
@@ -343,20 +343,20 @@ namespace StockServiceClient.StockService
         System.Threading.Tasks.Task<bool> UpdateProductStockAmountAsync(string productNumber, int productAmount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://projetoavaliativo.dm113/02/IStockServiceV2/RetrieveProductStock", ReplyAction="http://projetoavaliativo.dm113/02/IStockServiceV2/RetrieveProductStockResponse")]
-        StockServiceClient.StockService.ProductStockData RetrieveProductStock(string productNumber);
+        StockClient.StockService.ProductStockData RetrieveProductStock(string productNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://projetoavaliativo.dm113/02/IStockServiceV2/RetrieveProductStock", ReplyAction="http://projetoavaliativo.dm113/02/IStockServiceV2/RetrieveProductStockResponse")]
-        System.Threading.Tasks.Task<StockServiceClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber);
+        System.Threading.Tasks.Task<StockClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IStockServiceV2Channel : StockServiceClient.StockService.IStockServiceV2, System.ServiceModel.IClientChannel
+    public interface IStockServiceV2Channel : StockClient.StockService.IStockServiceV2, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class StockServiceV2Client : System.ServiceModel.ClientBase<StockServiceClient.StockService.IStockServiceV2>, StockServiceClient.StockService.IStockServiceV2
+    public partial class StockServiceV2Client : System.ServiceModel.ClientBase<StockClient.StockService.IStockServiceV2>, StockClient.StockService.IStockServiceV2
     {
         
         public StockServiceV2Client()
@@ -393,12 +393,12 @@ namespace StockServiceClient.StockService
             return base.Channel.UpdateProductStockAmountAsync(productNumber, productAmount);
         }
         
-        public StockServiceClient.StockService.ProductStockData RetrieveProductStock(string productNumber)
+        public StockClient.StockService.ProductStockData RetrieveProductStock(string productNumber)
         {
             return base.Channel.RetrieveProductStock(productNumber);
         }
         
-        public System.Threading.Tasks.Task<StockServiceClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber)
+        public System.Threading.Tasks.Task<StockClient.StockService.ProductStockData> RetrieveProductStockAsync(string productNumber)
         {
             return base.Channel.RetrieveProductStockAsync(productNumber);
         }
